@@ -1,0 +1,14 @@
+bryantt23@LAPTOP-OVD5R99O:~$ docker run -it --name ubuntu_container2 ubuntu /bin/bash
+root@918fd7a72c98:/# mkdir -p /usr/src/app
+root@918fd7a72c98:/# touch /usr/src/app/index.js
+root@918fd7a72c98:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@918fd7a72c98:/# cd usr
+root@918fd7a72c98:/usr# ls
+bin  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+root@918fd7a72c98:/usr# cd src
+root@918fd7a72c98:/usr/src# cd app
+root@918fd7a72c98:/usr/src/app# ls
+index.js
+root@918fd7a72c98:/usr/src/app# exit
+exit
