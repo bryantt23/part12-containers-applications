@@ -1,0 +1,16 @@
+
+bryantt23@LAPTOP-OVD5R99O:~$ docker start -i ubuntu_container2
+
+root@918fd7a72c98:/#
+root@918fd7a72c98:/#
+root@918fd7a72c98:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@918fd7a72c98:/# cd /usr/src/app/
+root@918fd7a72c98:/usr/src/app# ls
+index.js
+root@918fd7a72c98:/usr/src/app# nano index.js
+root@918fd7a72c98:/usr/src/app#
+
+apt-get install -y nodejs
+
+apt-get install curl
