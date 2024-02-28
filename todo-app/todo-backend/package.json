@@ -12,10 +12,10 @@
     "express": "~4.16.1",
     "mongoose": "^5.13.2",
     "morgan": "~1.9.1",
-    "redis": "^3.1.2"
+    "redis": "^3.1.2",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
     "nodemon": "^2.0.12"
   }
 }
