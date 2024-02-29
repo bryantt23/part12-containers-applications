@@ -1,6 +1,20 @@
 const express = require('express');
 const { Todo } = require('../mongo')
 const router = express.Router();
+const redis = require("redis")
+const { promisify } = require("util")
+
+const client = redis.createClient({})
+
+const getAsync = promisify(client.get).bind(client)
+const setAsync = promisify(client.set).bind(client)
+
+/* GET statistics. */
+router.get('/statistics', async (req, res) => {
+  const addedTodos = await getAsync("added_todos") || 0
+  res.send({ added_todos: parseInt(addedTodos) })
+});
+
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
@@ -14,6 +28,10 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     done: false
   })
+  // Increment the counter by one in Redis after creating a new todo
+  const currentCount = await getAsync("added_todos") || 0
+  await setAsync("added_todos", parseInt(currentCount) + 1)
+
   res.send(todo);
 });
 
