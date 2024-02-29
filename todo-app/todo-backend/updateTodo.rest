@@ -1,0 +1,15 @@
+@baseURL = http://localhost:3000
+@todoId = 65e01a879524409f099fc527
+@updatedText = Learn REST Client
+@doneStatus = true
+
+###
+
+# Update a todo by ID
+PUT {{baseURL}}/todos/@todoId
+Content-Type: application/json
+
+{
+  "text": "{{updatedText}}",
+  "done": {{doneStatus}}
+}
