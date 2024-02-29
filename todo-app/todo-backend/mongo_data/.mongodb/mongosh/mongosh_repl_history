@@ -1,3 +1,9 @@
+show users
+use admin
+mongosh -u root -p example --authenticationDatabase admin
+exit
+show users
+use admin
 db.todos.find({})
 db.todos.insert({ text: "Increase the number of tools in my toolbelt", done: false })
 show collections
