@@ -19,3 +19,21 @@ services:
     command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
     volumes: # Declare the volume
       - ./redis_data:/data
+  
+  server:
+    image: todo-backend-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports: 
+      - 3000:3000
+    container_name: todo-backend-dev
+    environment:
+      - MONGO_URL=mongodb://root:example@localhost:3456/the_database?authSource=admin
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - redis
+    
